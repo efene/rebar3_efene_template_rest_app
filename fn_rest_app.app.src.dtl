@@ -1,0 +1,13 @@
+{application, {{name}}, [
+    {description, "REST {{name}} Application."},
+    {vsn, "1"},
+    {modules, []},
+    {registered, [{{name}}_sup]},
+    {applications, [
+        kernel,
+        stdlib,
+        cowboy
+    ]},
+    {mod, { {{name}}_app, []}},
+    {env, []}
+]}.

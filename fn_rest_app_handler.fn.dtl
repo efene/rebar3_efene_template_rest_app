@@ -1,0 +1,39 @@
+
+fn init @public
+  case Req, Opts:
+    (cowboy_rest, Req, Opts)
+end
+
+fn content_types_provided @public
+  case Req, State:
+    ([('text/html', to_html),
+      ('application/json', to_json),
+      ('text/plain', to_text)],
+     Req, State)
+end
+
+fn to_html @public
+  case Req, State:
+    Body = '<html>
+<head>
+    <meta charset=\"utf-8\">
+    <title>REST Hello World!</title>
+</head>
+<body>
+    <p>REST Hello World as HTML!</p>
+</body>
+</html>'
+
+    (Body, Req, State)
+end
+
+fn to_json @public
+  case Req, State:
+    Body = jsx.encode({'rest': 'Hello World!'})
+    (Body, Req, State)
+end
+
+fn to_text @public
+  case Req, State:
+    ('REST Hello World as text!', Req, State)
+end

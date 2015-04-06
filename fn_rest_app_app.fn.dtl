@@ -1,0 +1,18 @@
+@behaviour(application)
+
+fn start @public
+  case _Type, _Args:
+    Dispatch = cowboy_router.compile([(`_`, [("/", {{name}}_handler, []) ])])
+
+    TransportOpts = [(port, 8080)]
+    NumAcceptors = 100
+    ProtoOpts = [(env, [(dispatch, Dispatch)])]
+
+    (ok, _) = cowboy.start_http(http, NumAcceptors, TransportOpts, ProtoOpts)
+    {{name}}_sup.start_link()
+end
+
+fn stop @public
+  case _State:
+    ok
+end
