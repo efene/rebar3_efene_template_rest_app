@@ -4,6 +4,7 @@
     {modules, []},
     {registered, [{{name}}_sup]},
     {applications, [
+        sasl,
         kernel,
         stdlib,
         cowboy
