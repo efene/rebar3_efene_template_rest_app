@@ -14,3 +14,5 @@
         {dev_mode, true},
         {include_erts, false},
         {extended_start_script, true}]}.
+
+{profiles, [{prod, [{relx, [{dev_mode, false} ,{include_erts, true}]}]}]}.
