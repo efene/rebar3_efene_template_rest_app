@@ -5,6 +5,12 @@
 ]}.
 {plugins, [
     {rebar3_efene_compile, ".*", {git, "https://github.com/efene/rebar3_efene_compile.git", {branch, "master"}}},
-    {rebar3_efene_ct, ".*", {git, "https://github.com/efene/rebar3_efene_ct.git", {branch, "master"}}}
+    {rebar3_efene_ct, ".*", {git, "https://github.com/efene/rebar3_efene_ct.git", {branch, "master"}}},
+    {rebar3_run, ".*", {git, "git://github.com/tsloughter/rebar3_run.git", {branch, "master"}}}
 ]}.
 {provider_hooks, [{pre, [{ct, {efene, ct}}, {compile, {efene, compile}}]}]}.
+
+{relx, [{release, { {{name}}, "0.0.1"}, ["{{name}}"]},
+        {dev_mode, true},
+        {include_erts, false},
+        {extended_start_script, true}]}.
