@@ -1,3 +1,4 @@
+@behaviour(supervisor)
 
 fn start_link @public
   case:
