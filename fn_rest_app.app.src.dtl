@@ -7,7 +7,8 @@
         sasl,
         kernel,
         stdlib,
-        cowboy
+        cowboy,
+        jsx
     ]},
     {mod, { {{name}}_app, []}},
     {env, []}
