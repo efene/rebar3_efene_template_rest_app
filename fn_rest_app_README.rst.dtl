@@ -17,6 +17,13 @@ Test
 
     rebar3 ct
 
+Run
+---
+
+::
+
+    rebar3 run
+
 TODO
 ----
 
