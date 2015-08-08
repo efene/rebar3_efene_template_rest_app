@@ -1,19 +1,25 @@
 
-fn init @public
-  case Req, Opts:
-    (cowboy_rest, Req, Opts)
+
+fn init @public case _, Req, Opts:
+  (upgrade, protocol, cowboy_rest)
 end
 
-fn content_types_provided @public
-  case Req, State:
-    ([('text/html', to_html),
-      ('application/json', to_json),
-      ('text/plain', to_text)],
-     Req, State)
+fn rest_init @public case Req, Opts:
+  (ok, Req, Opts)
 end
 
-fn to_html @public
-  case Req, State:
+fn allowed_methods @public case Req, State:
+  (['GET'], Req, State)
+end
+
+fn content_types_provided @public case Req, State:
+  ([('text/html', to_html),
+    ('application/json', to_json),
+    ('text/plain', to_text)],
+   Req, State)
+end
+
+fn to_html @public case Req, State:
     Body = '<html>
 <head>
     <meta charset=\"utf-8\">
@@ -27,13 +33,11 @@ fn to_html @public
     (Body, Req, State)
 end
 
-fn to_json @public
-  case Req, State:
-    Body = jsx.encode({'rest': 'Hello World!'})
-    (Body, Req, State)
+fn to_json @public case Req, State:
+  Body = jsx.encode({'rest': 'Hello World!'})
+  (Body, Req, State)
 end
 
-fn to_text @public
-  case Req, State:
-    ('REST Hello World as text!', Req, State)
+fn to_text @public case Req, State:
+  ('REST Hello World as text!', Req, State)
 end

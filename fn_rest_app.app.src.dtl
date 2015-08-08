@@ -8,7 +8,8 @@
         kernel,
         stdlib,
         cowboy,
-        jsx
+        jsx,
+        lager
     ]},
     {mod, { {{name}}_app, []}},
     {env, []}

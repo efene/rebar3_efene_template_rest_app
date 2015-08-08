@@ -9,6 +9,7 @@ fn start @public
     ProtoOpts = [(env, [(dispatch, Dispatch)])]
 
     (ok, _) = cowboy.start_http(http, NumAcceptors, TransportOpts, ProtoOpts)
+    lager.info("App {{name}} started")
     {{name}}_sup.start_link()
 end
 
