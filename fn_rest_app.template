@@ -7,6 +7,6 @@
 {template, "fn_rest_app_app.fn.dtl", "src/{{name}}_app.fn"}.
 {template, "fn_rest_app_handler.fn.dtl", "src/{{name}}_handler.fn"}.
 {template, "fn_rest_app_rebar.config.dtl", "rebar.config"}.
-{template, "fn_app_editorconfig.dtl", ".editorconfig"}.
+{template, "fn_rest_app_editorconfig.dtl", ".editorconfig"}.
 {template, "fn_rest_app_gitignore.dtl", ".gitignore"}.
 {template, "fn_rest_app_README.rst.dtl", "README.rst"}.
