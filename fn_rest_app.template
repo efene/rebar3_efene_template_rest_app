@@ -2,21 +2,21 @@
 {variables, [
     {name, "myapp", "Name of the application"}
 ]}.
-{template, "fn_rest_app.app.src.dtl", "apps/{{name}}/src/{{name}}.app.src"}.
-{template, "fn_rest_app_sup.fn.dtl", "apps/{{name}}/src/{{name}}_sup.fn"}.
-{template, "fn_rest_app_app.fn.dtl", "apps/{{name}}/src/{{name}}_app.fn"}.
-{template, "fn_rest_app_handler.fn.dtl", "apps/{{name}}/src/{{name}}_handler.fn"}.
+{template, "fn_rest_app.app.src.dtl", "{{name}}/apps/{{name}}/src/{{name}}.app.src"}.
+{template, "fn_rest_app_sup.fn.dtl", "{{name}}/apps/{{name}}/src/{{name}}_sup.fn"}.
+{template, "fn_rest_app_app.fn.dtl", "{{name}}/apps/{{name}}/src/{{name}}_app.fn"}.
+{template, "fn_rest_app_handler.fn.dtl", "{{name}}/apps/{{name}}/src/{{name}}_handler.fn"}.
 
-{template, "fn_rest_app_advanced.config", "config/advanced.config"}.
-{template, "fn_rest_app_sys.config", "config/sys.config"}.
-{template, "fn_rest_app_vars.config", "config/vars.config"}.
-{template, "fn_rest_app_vm.args", "config/vm.args"}.
+{template, "fn_rest_app_advanced.config", "{{name}}/config/advanced.config"}.
+{template, "fn_rest_app_sys.config", "{{name}}/config/sys.config"}.
+{template, "fn_rest_app_vars.config", "{{name}}/config/vars.config"}.
+{template, "fn_rest_app_vm.args", "{{name}}/config/vm.args"}.
 
-{file, "fn_rest_app_config.schema", "config/config.schema"}.
-{file, "fn_rest_app_extended_bin", "config/extended_bin"}.
-{chmod, "config/extended_bin", 8#744}.
+{file, "fn_rest_app_config.schema", "{{name}}/config/config.schema"}.
+{file, "fn_rest_app_extended_bin", "{{name}}/config/extended_bin"}.
+{chmod, "{{name}}/config/extended_bin", 8#744}.
 
-{template, "fn_rest_app_rebar.config.dtl", "rebar.config"}.
-{template, "fn_rest_app_editorconfig.dtl", ".editorconfig"}.
-{template, "fn_rest_app_gitignore.dtl", ".gitignore"}.
-{template, "fn_rest_app_README.rst.dtl", "README.rst"}.
+{template, "fn_rest_app_rebar.config.dtl", "{{name}}/rebar.config"}.
+{template, "fn_rest_app_editorconfig.dtl", "{{name}}/.editorconfig"}.
+{template, "fn_rest_app_gitignore.dtl", "{{name}}/.gitignore"}.
+{template, "fn_rest_app_README.rst.dtl", "{{name}}/README.rst"}.
