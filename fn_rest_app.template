@@ -8,13 +8,9 @@
 {template, "fn_rest_app_handler.fn.dtl", "{{name}}/apps/{{name}}/src/{{name}}_handler.fn"}.
 
 {template, "fn_rest_app_advanced.config", "{{name}}/config/advanced.config"}.
-{template, "fn_rest_app_sys.config", "{{name}}/config/sys.config"}.
 {template, "fn_rest_app_vars.config", "{{name}}/config/vars.config"}.
-{template, "fn_rest_app_vm.args", "{{name}}/config/vm.args"}.
 
 {file, "fn_rest_app_config.schema", "{{name}}/config/config.schema"}.
-{file, "fn_rest_app_extended_bin", "{{name}}/config/extended_bin"}.
-{chmod, "{{name}}/config/extended_bin", 8#744}.
 
 {template, "fn_rest_app_rebar.config.dtl", "{{name}}/rebar.config"}.
 {template, "fn_rest_app_editorconfig.dtl", "{{name}}/.editorconfig"}.

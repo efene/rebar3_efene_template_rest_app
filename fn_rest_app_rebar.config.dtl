@@ -10,31 +10,19 @@
     {rebar3_cuttlefish, {git, "git@github.com:tsloughter/rebar3_cuttlefish.git", {branch, "master"}}}
 ]}.
 {provider_hooks, [
-    {pre, [{ct, {efene, ct}}, {compile, {efene, compile}}]},
-    {post, [{release, cuttlefish}]}
+    {pre, [{ct, {efene, ct}}, {compile, {efene, compile}}]}
 ]}.
 
 {relx, [{release, { {{name}}, "0.0.1"}, [{{name}}, sasl]},
 
-    {sys_config, "./config/sys.config"},
-    {vm_args, "./config/vm.args"},
-
     {dev_mode, true},
     {include_erts, false},
-
-    {extended_start_script, true},
 
     {overlay_vars, "config/vars.config"},
     {overlay, [
         {mkdir, "etc"},
         {mkdir, "bin"},
-        {template, "./_build/default/plugins/cuttlefish/priv/erlang_vm.schema",
-            "share/schema/11-erlang_vm.schema"},
-        {template, "config/config.schema", "share/schema/21-{{name}}.schema"},
-        {template, "./config/extended_bin", "bin/{{name}}"},
-        {template, "./config/vm.args", "etc/vm.args"},
-        {template, "./config/advanced.config", "etc/advanced.config"},
-        {copy, "./_build/default/bin/cuttlefish", "bin/cuttlefish"}
+        {template, "./config/advanced.config", "etc/advanced.config"}
     ]}
 ]}.
 
